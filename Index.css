@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'Asiyah_Script';
+    src: url('font/Asiyah_Script.eot');
+    src: url('font/Asiyah_Script.ttf');
+}
+@font-face {
+    font-family: 'Doodle_Gum';
+    src: url('font/Doodle_Gum.ttf');
+
+}
+
+@font-face {
+    font-family: 'cubic';
+    src: url('font/cubic.ttf');
+
+}
+
+@font-face {
+    font-family: 'heydings_icons';
+    src: url('font/heydings_icons.ttf');
+
+}
+
+
+
+fieldset
+{
+	width: 280px;
+	height: 150px;
+	padding: 0px;
+	margin: 0;
+	border-radius: 10px;
+	border:  2px solid black;
+
+	
+}
+
+fieldset input
+{
+	margin-bottom: 15px;
+
+}
+
+fieldset label
+{
+	font-family: heydings_icons,Arial;
+	display: block;
+	width: 100px;
+	float: left;
+	
+}
+
+fieldset #bloc-input
+{
+	position:relative;
+   top:30%;
+   width: 90%;
+   margin: auto;
+ 
+}
+
+form {
+   position:absolute;
+   top:50%;
+   left:50%;
+   width:280px; 
+   height:150px; 
+   margin-left:-140px;
+   margin-top:-75px; 
+   background:red;
+}
+
+input
+{
+	border-radius: 5px;
+	box-shadow:1px 1px 2px #C0C0C0 inset;
+	background-color: #DFDFDF;
+}
