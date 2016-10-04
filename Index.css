@@ -1,3 +1,10 @@
+body
+{
+  margin: 0;
+  width: 640px;
+  height: auto;
+}
+
 ul 
 {
   list-style: none;
@@ -36,7 +43,7 @@ ul
 #back-picture
 {
   position:absolute;
-   top:50%;
+   top:25%;
    left:50%;
    width:640px; 
    height:430px; 
@@ -44,15 +51,16 @@ ul
    margin-top:-215px; 
 }
 
+
 #back-picture img
 {
-  
- filter: blur(5px);
-        -webkit-filter: blur(3px);
-        -moz-filter: blur(3px);
-        -o-filter: blur(3px);
-        -ms-filter: blur(3px);
+  max-width: 100%;
+  height: auto;
 }
+
+
+
+
 
 #header-input
 {
@@ -94,7 +102,6 @@ fieldset
 
 fieldset input
 {
-  webkit-appearance:none;
   border: 0px solid black;
 	margin-bottom: 15px;
   width: 100%;
@@ -145,21 +152,24 @@ form {
  
  }
 
- input[text]
+ input[style="text"]
  {
   line-height:30px;
   position: absolute;
   top: 0px;
- 
+  size:15;
+  color: #FFFFFF;
+
+   
  }
 
 input
 {
  
-  display: block;
 	border-radius: 5px;
 	box-shadow:1px 1px 2px #C0C0C0 inset;
 	background-color: #DFDFDF;
+  text-align:center;
 }
 fieldset li 
 {
@@ -181,19 +191,38 @@ fieldset li #label-password
 {
   margin: 3px 0px 0px 7px;
   position:absolute;
-  top:50%;
+  top:40px;
   height: 30px;
   background: url("pictures/lock-grey.png") no-repeat;
   width: 30px;
     cursor: pointer;
 }
 
- input[password]
+ input[type ="password"]
  {
   line-height:30px;
   position: absolute;
   top: 0px;
   padding-left: 21px;
   text-indent: 50px;
- 
+  -webkit-text-security: disc;
+  color:#FFF;
+ }
+
+ input[type="submit"]
+ {
+  color : #FFFFFF;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 30px;
+  height: 40px;
+  text-align:center;
+  box-shadow: 0.5px 0.5px 0.5px rgba(0,0,0,0.81);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#77a033), color-stop(33%,#668f24), color-stop(72%,#5b8220), color-stop(100%,#52761c));
+   cursor: pointer;
+ }
+
+ input[type="password"]:focus, input[type="text"]:focus
+ {
+  color: #FFF;
  }
