@@ -7,7 +7,7 @@
 <body>
 	<div id="back-picture">
 		<img src="pictures/background-1.jpg" alt="error">
-	<form>
+	<form action="login.php" method="post">
 		<div id="header-input">
 			<h1>Sign In</h1>
 		</div>
