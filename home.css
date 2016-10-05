@@ -1,3 +1,13 @@
+html, body
+{
+	margin:0;
+}
+
+header, ul
+{
+	margin-top: 0;
+}
+
 img
 {
 	width:200px;
@@ -8,4 +18,35 @@ img
 {
 	display: flex;
 	justify-content: space-around;
+}
+
+header
+{	
+	margin: 0;
+	height: 200px;
+	width: 100%;
+	background: url("pictures/background-nav.jpg") no-repeat top ;
+	background: -moz-linear-gradient(left, rgba(255,255,255,1) 93%, rgba(255,255,255,0) 100%);
+	
+	opacity: 0.4;
+
+}
+
+ul
+{
+	display:flex;
+	list-style: none;
+	float: right;
+	padding-right: 20%;
+	: bottom;	
+}
+
+li
+{
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-left: 15px;
+	list-style:none;
 }
