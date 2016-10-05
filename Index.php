@@ -6,17 +6,17 @@
 </head>
 <body>
 	<div id="back-picture">
-		<img src="pictures/background-1.jpg" alt="error">
+		<img src="pictures/Background-1.jpg" alt="error">
 	<form action="login.php" method="post">
 		<div id="header-input">
-			<h1>Sign In</h1>
+			<h1>Se connecter</h1>
 		</div>
 		<fieldset>
 
 				<ul id="bloc-input">
 					<li>
 						<label for="login" id="label-login"></label>
-						<input type="text" name="login" type="text" id="login" placeholder="login"><br />
+						<input type="text" name="login" type="text" id="login" placeholder="Identifiant"><br />
 					</li>
 					<li>
 						<label for="mdp" id="label-password"></label>

@@ -3,3 +3,9 @@ img
 	width:200px;
 	height: auto;
 }
+
+.block-ligne
+{
+	display: flex;
+	justify-content: space-around;
+}
