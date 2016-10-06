@@ -4,7 +4,8 @@
 
 
 function openf (){
-    alert(recupId());
+    
+fenetre(this, getWindowWidth, getWindowHeight, " ")
     // fenetre(name(e),getWindowWidth()-500,getWindowHeight()-50," ");
 };
 
@@ -26,7 +27,7 @@ function name()
 
 
 function fenetre(image, largeur, hauteur, titre) {
-    window.open("album_image.php?img=" + image + "&larg=" + largeur + "&haut=" + hauteur + "&titre=" + escape(titre), "", "width=" + largeur + ",height=" + hauteur);
+    window.open("home.php?img=" + image + "&larg=" + largeur + "&haut=" + hauteur + "&titre=" + escape(titre), "", "width=" + largeur + ",height=" + hauteur);
 }
 
 function getWindowHeight() {

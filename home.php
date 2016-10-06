@@ -69,7 +69,7 @@ if (isset($_SESSION['login']))  //Redirection si pas loggé
         // On enregistre la miniature sous le nom "mini_couchersoleil.jpg"
         imagejpeg($destination, 'tmp/Thumb/'.$name_image);
 
-      echo '<p><img id="clickme" src="'.$name_image.'" onclick="openf()"/></p>'; //Affiche la photo
+      echo '<p><img id="clickme" src="'.'tmp/Thumb/'.$name_image.'" onclick="openf()"/></p>'; //Affiche la photo
 
         if ($i==$nbr_photo_par_ligne || $nbr_ligne==$limit)//Ferme le div apres le nombre de photos souhaités sur une ligne
         {
