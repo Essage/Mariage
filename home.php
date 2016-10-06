@@ -11,6 +11,7 @@ if (isset($_SESSION['login']))  //Redirection si pas loggé
   	<meta charset="utf-8">
   	<link rel="stylesheet" type="text/css" href="home.css">
     <title>home</title>
+   
   </head>
   <body>
 
@@ -27,6 +28,7 @@ if (isset($_SESSION['login']))  //Redirection si pas loggé
   $nbr_photo=NULL;
   $limit=NULL;
   $nbr_ligne=NULL;
+  $name_image=NULL;
 
   echo 'Listing des images du repertoire miniatures <br />';
   foreach($files as $image)//recupération du nombre de photo
@@ -43,6 +45,7 @@ if (isset($_SESSION['login']))  //Redirection si pas loggé
   foreach($files as $image) // Affichage des photos en ligne de 4
   { 
      $f= $image;
+     $name_image=str_replace("photos/","",$f);
      
         if ($i==0 ) // Délimite les lignes
         {
@@ -51,8 +54,22 @@ if (isset($_SESSION['login']))  //Redirection si pas loggé
       
         }
      //echo $f.'<br />'; //listing des fichiers
+        $source = imagecreatefromjpeg($f); // La photo est la source
+        $destination = imagecreatetruecolor(200, 150); // On crée la miniature vide
 
-     echo '<p><img src="'.$f.'"/></p>'; //Affiche la photo
+        // Les fonctions imagesx et imagesy renvoient la largeur et la hauteur d'une image
+        $largeur_source = imagesx($source);
+        $hauteur_source = imagesy($source);
+        $largeur_destination = imagesx($destination);
+        $hauteur_destination = imagesy($destination);
+
+        // On crée la miniature
+        imagecopyresampled($destination, $source, 0, 0, 0, 0, $largeur_destination, $hauteur_destination, $largeur_source, $hauteur_source);
+
+        // On enregistre la miniature sous le nom "mini_couchersoleil.jpg"
+        imagejpeg($destination, 'tmp/Thumb/'.$name_image);
+
+      echo '<p><img id="clickme" src="'.$name_image.'" onclick="openf()"/></p>'; //Affiche la photo
 
         if ($i==$nbr_photo_par_ligne || $nbr_ligne==$limit)//Ferme le div apres le nombre de photos souhaités sur une ligne
         {
@@ -72,6 +89,7 @@ else
         exit();
 }
 ?>
+ <script type="text/javascript" src="js/zoom.js"></script>
 </body>
 <footer>
 <a href='http://fr.freepik.com/vecteurs-libre/invitation-de-mariage-de-style-boho_910222.htm' class="petit">Designed by Freepik</a>

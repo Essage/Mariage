@@ -8,7 +8,7 @@ header, ul
 	margin-top: 0;
 }
 
-img
+/
 {
 	width:200px;
 	height: auto;
@@ -49,4 +49,9 @@ li
 	text-transform: uppercase;
 	margin-left: 15px;
 	list-style:none;
+}
+
+img
+{
+	cursor: pointer;
 }
