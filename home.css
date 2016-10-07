@@ -3,6 +3,25 @@ html, body
 	margin:0;
 }
 
+#overlay {
+    display : none; /* Par défaut, on cache l'overlay */
+
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; 
+  	height: 530px;
+    text-align: center; /* Pour centrer l'image que l'overlay contiendra */
+
+    /* Ci-dessous, nous appliquons un background de couleur noire et d'opacité 0.6. Il s'agit d'une propriété CSS3. */
+    background-color: rgba(250,250,250,0.8);
+}
+
+#overlay img {
+    margin-top: 15px;
+}
+
+
+
 header, ul
 {
 	margin-top: 0;

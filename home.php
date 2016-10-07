@@ -4,7 +4,6 @@ session_start();
 if (isset($_SESSION['login']))  //Redirection si pas loggé
 {
 ?>
-
   <!DOCTYPE html>
 
   <head>
@@ -23,6 +22,9 @@ if (isset($_SESSION['login']))  //Redirection si pas loggé
   //Affichage des photos
   $dir = 'photos/*.{jpg,jpeg,gif,png}';
   $files = glob($dir,GLOB_BRACE);
+  $dirmin ='tmp/Thumb/*.{jpg,jpeg,gif,png}';
+  $filesmin =glob($dirmin,GLOB_BRACE);
+  $imgmin=false;
   $i=0;
   $nbr_photo_par_ligne=3;
   $nbr_photo=NULL;
@@ -39,6 +41,7 @@ if (isset($_SESSION['login']))  //Redirection si pas loggé
   if ($nbr_photo % $nbr_photo_par_ligne !=0)
   {
     $limit=($nbr_photo/$nbr_photo_par_ligne)+1;
+
   }
 
 
@@ -53,25 +56,44 @@ if (isset($_SESSION['login']))  //Redirection si pas loggé
             echo '<div class="block-ligne">';//block ligne
       
         }
-     //echo $f.'<br />'; //listing des fichiers
-        $source = imagecreatefromjpeg($f); // La photo est la source
-        $destination = imagecreatetruecolor(200, 150); // On crée la miniature vide
+     //echo $f.'      '.$name_image.'<br />'; //listing des fichiers
+        
+          # code...
+        // verification que le thumb n'existe pas
+       /* foreach ($filesmin as $imagemin)
+       {
+          # code...
+          $fmin =$imagemin;
+          if($name_image == str_replace("tmp/Thumb/","",$fmin))
+          {
+            $imgmin=true;
+          }
 
-        // Les fonctions imagesx et imagesy renvoient la largeur et la hauteur d'une image
-        $largeur_source = imagesx($source);
-        $hauteur_source = imagesy($source);
-        $largeur_destination = imagesx($destination);
-        $hauteur_destination = imagesy($destination);
+        }
+        
+        if ($imgmin) {
+        
 
-        // On crée la miniature
-        imagecopyresampled($destination, $source, 0, 0, 0, 0, $largeur_destination, $hauteur_destination, $largeur_source, $hauteur_source);
+          $source = imagecreatefromjpeg($f); // La photo est la source
+          $destination = imagecreatetruecolor(700, 500); // On crée la miniature vide
 
-        // On enregistre la miniature sous le nom "mini_couchersoleil.jpg"
-        imagejpeg($destination, 'tmp/Thumb/'.$name_image);
+          // Les fonctions imagesx et imagesy renvoient la largeur et la hauteur d'une image
+          $largeur_source = imagesx($source);
+          $hauteur_source = imagesy($source);
+          $largeur_destination = imagesx($destination);
+          $hauteur_destination = imagesy($destination);
 
-      echo '<p><img id="clickme" src="'.'tmp/Thumb/'.$name_image.'" onclick="openf()"/></p>'; //Affiche la photo
+          // On crée la miniature
+          imagecopyresampled($destination, $source, 0, 0, 0, 0, $largeur_destination, $hauteur_destination, $largeur_source, $hauteur_source);
 
-        if ($i==$nbr_photo_par_ligne || $nbr_ligne==$limit)//Ferme le div apres le nombre de photos souhaités sur une ligne
+          // On enregistre la miniature sous le nom "mini_couchersoleil.jpg"
+          imagejpeg($destination, 'tmp/overlay/'.$name_image);
+          $imgmin=false;
+       }*/
+
+      echo '<p><a href="tmp/overlay/'.$name_image.'" title="Afficher image originale" name="lien_overlay"><img id="clickme" src="tmp/Thumb/'.$name_image.'" onclick=""> </a></p>'; //Affiche la photo
+
+        if ($i==$nbr_photo_par_ligne || (isset($limit) && $nbr_ligne==$limit))//Ferme le div apres le nombre de photos souhaités sur une ligne
         {
         
               echo '</div>';
@@ -89,7 +111,10 @@ else
         exit();
 }
 ?>
- <script type="text/javascript" src="js/zoom.js"></script>
+
+ <div id="overlay"></div>
+  <script type="text/javascript" src="js/zoom.js"></script> 
+
 </body>
 <footer>
 <a href='http://fr.freepik.com/vecteurs-libre/invitation-de-mariage-de-style-boho_910222.htm' class="petit">Designed by Freepik</a>

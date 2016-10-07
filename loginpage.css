@@ -1,0 +1,30 @@
+#carrousel
+{
+position:relative;
+    height:300px;
+    width:450px;
+    margin:auto;
+}
+
+#carrousel  p 
+{
+	display: inline-block;
+    
+
+
+
+  }
+
+#carrousel > .clear {
+  clear: both;
+  height: 0; overflow: hidden; /* Précaution pour IE 7 */
+}
+
+#carrousel  p img
+
+{
+
+	position: absolute;
+}
+
+ 
