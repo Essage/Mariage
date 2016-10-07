@@ -9,11 +9,15 @@
    
   </head>
   <body>
+
+<header>
+<h1>Raphaël et Patricia</h1>
+</header>
 <div id="carrousel">
 
-		<p><img src="tmp/Thumb/Photo du 15-05-2015 1.jpg"></p>
-		<p><img src="tmp/Thumb/Photo du 15-05-2015 3.jpg"></p>
-		<p><img src="tmp/Thumb/Photo du 15-05-2015 2.jpg" ></p>
+		<p id='image0'><img src="tmp/Slide/Photo du 15-05-2015 1.jpg"></p>
+		<p id='image2'><img src="tmp/Slide/Photo du 15-05-2015 3.jpg"></p>
+		<p id='image1'><img src="tmp/Slide/Photo du 15-05-2015 2.jpg" ></p>
 	
 </div>
 <br>
