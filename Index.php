@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div id="back-picture">
-		<img src="pictures/Background-1.jpg" alt="error">
+		<img src="pictures/Background-2.jpg" alt="error">
 	<form action="login.php" method="post">
 		<div id="header-input">
 			<h1>Se connecter</h1>

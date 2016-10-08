@@ -22,7 +22,7 @@ if (isset($_SESSION['login']))  //Redirection si pas loggé
   //Affichage des photos
   $dir = 'photos/*.{jpg,jpeg,gif,png}';
   $files = glob($dir,GLOB_BRACE);
-  $dirmin ='tmp/Thumb/*.{jpg,jpeg,gif,png}';
+  $dirmin ='pictures/*.{jpg,jpeg,gif,png}';
   $filesmin =NULL;
   $imgmin=false;
   $i=0;
@@ -38,9 +38,9 @@ if (isset($_SESSION['login']))  //Redirection si pas loggé
     $nbr_photo++;
   }
 
-  $filesmin[0]='photos/Photo du 15-05-2015 1.jpg';
-  $filesmin[1]='photos/Photo du 15-05-2015 2.jpg';
-  $filesmin[2]='photos/Photo du 15-05-2015 3.jpg';
+  $filesmin[0]='pictures/Background-1.jpg';
+ $filesmin[1]='pictures/Background-1.jpg';
+  //$filesmin[2]='photos/Photo du 15-05-2015 3.jpg';
 
   if ($nbr_photo % $nbr_photo_par_ligne !=0)
   {
@@ -66,8 +66,8 @@ if (isset($_SESSION['login']))  //Redirection si pas loggé
         // verification que le thumb n'existe pas
 
    
-        /*
-          $source = imagecreatefromjpeg($f); // La photo est la source
+       
+          /*$source = imagecreatefromjpeg($f); // La photo est la source
           $destination = imagecreatetruecolor(330, 274); // On crée la miniature vide
 
           // Les fonctions imagesx et imagesy renvoient la largeur et la hauteur d'une image
@@ -81,8 +81,8 @@ if (isset($_SESSION['login']))  //Redirection si pas loggé
 
           // On enregistre la miniature sous le nom "mini_couchersoleil.jpg"
           imagejpeg($destination, 'tmp/Slide/'.$name_image);
-          $imgmin=false;
-       */
+          $imgmin=false;*/
+       
 
       echo '<p><a href="tmp/Overlay/'.$name_image.'" title="Afficher image originale" name="lien_overlay"><img id="clickme" src="tmp/Thumb/'.$name_image.'" onclick=""> </a></p>'; //Affiche la photo
 

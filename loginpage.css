@@ -1,18 +1,44 @@
+html, body
+{
+	margin: 0;
+}
+
+body
+{
+	width: 100%;
+
+	/*background:url("pictures/test.jpg") no-repeat bottom;*/
+	
+	background-size: 100% auto;
+}
+#background
+{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+}
 #carrousel
 {
 
-    height:290px;
-    width:800px;
+    height:292px;
+    width:802px;
      position:absolute;
     left: 50%;
     top: 50%;
-    margin-left: -400px;/* Cette valeur doit être la moitié négative de la valeur du width */
-    margin-top: -100px; /*Cette valeur doit être la moitié négative de la*/
+    margin-left: -401px;/* Cette valeur doit être la moitié négative de la valeur du width */
+    margin-top: -40px; /*Cette valeur doit être la moitié négative de la*/
 }
 
 header
 {
+	text-align: center;
+	width: 100%;
+	height: 70px;
+	margin-top: 100px;
 
+	background :url("pictures/back_header_login.jpg") repeat-x bottom;
+	background-size: 100% 70px;
 }
 
 .slide
@@ -25,28 +51,184 @@ header
 {
 	display: both;
 	position: absolute;
-	box-shadow: 1px 1px 2px 0 black;
+	box-shadow: 5px 5px 10px 0px #343434;
+	border: 2px solid white;
+}
+
+#carrousel img:before {
+	top: 15px;
+	left: 0;
+	width: 100%;
+	height: 130px;
+	
+	border-radius: 12px / 65px;
+	box-shadow: 0 0 10px #555;
+}
+#carrousel img:after { display: none; }
+
+
+/* ------  Login ---------*/
+
+
+
+
+
+
+
+#header-input
+{
+
+  border-radius:8px 8px 0px 0px;
+  width: 200px;
+  margin-bottom :0;
+  padding-bottom: 0;
+  height:50px;
+  text-align: center;
+  background: rgba(60,60,60,0.4);
+
+}
+#header-input h1
+{
+
+  font-size: 25px;
+  line-height: 50px;
+  margin: 0;
+  font-family: gotham_mefium,Arial;
+  color: white;
+ 
+
+}
+
+fieldset
+{
+	width: 200px;
+	height: 150px;
+	padding: 0px;
+	margin: 0;
+	border-radius: 0px 0px 8px 8px;
+  border: none; 
+  border-top: 2px ridge rgba(124, 124, 124, 0.81);
+  background: rgba(60,60,60,0.61);
+
+	
+}
+
+fieldset input
+{
+  border: 0px solid black;
+	margin-bottom: 15px;
+  width: 100%;
+  height: 25px;
+  border:1px solid black;
+  box-shadow: inset 0px 0px 5px #090909 ;
+ background: #4F484E;
+
+}
+
+fieldset label
+{
+  position: relative;
+  top: 0px;
+  left: 0;
+	font-family: heydings_icons,Arial;
+	display: block;
+	width: 100px;
+	float: left;
+	
+}
+
+fieldset #bloc-input
+{
+	position:relative;
+   top:20%;
+   width: 75%;
+   margin: auto;
+   padding: 0;
+ 
+}
+
+form ul{
+	list-style: none;
+}
+
+
+
+form {
+   position:absolute;
+   top:50%;
+   left:50%;
+   width:200px; 
+   height:202px; 
+   margin-left:-120px;
+   margin-top:-300px; 
+   border-radius: 8px;
+   box-shadow: 2px 2px 2px rgba(0,0,0,0.81);
+
+ 
+ }
+
+ input[style="text"], input[style="password"]
+ {
+  line-height:30px;
+  position: absolute;
+  top: 0px;
+  size:15;
+  color: #FFFFFF;
+
+   
+ }
+
+input
+{
+ 
+	border-radius: 5px;
+	box-shadow:1px 1px 2px #C0C0C0 inset;
+	background-color: #DFDFDF;
+  text-align:center;
+}
+fieldset li 
+{
+  height: 30px;
+  padding-bottom: 10px;
+}
+
+
+fieldset li #label-login
+{
+  margin: 3px 0px 0px 7px;
+  position:absolute;
+  height: 30px;
+  background: url("pictures/contact-grey.png") no-repeat;
+    cursor: pointer;
+}
+
+fieldset li #label-password
+{
+  margin: 3px 0px 0px 7px;
+  position:absolute;
+  top:40px;
+  height: 30px;
+  background: url("pictures/lock-grey.png") no-repeat;
+  width: 30px;
+    cursor: pointer;
 }
 
  
- #carrousel   img:before {
-	left: -5px;
-	top: 167px;
-	width: 280px;
-	height: 4px;
-	background: #aaa;
 
-	border-radius: 140px / 2px;
-	box-shadow: 0 0 5px #aaa, 0 0 10px #888, 0 0 15px #666;
-}
+ input[type="submit"]
+ {
+  color : #FFFFFF;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 0px;
+  height: 40px;
+  text-align:center;
+  box-shadow: 0.5px 0.5px 0.5px rgba(0,0,0,0.81);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#77a033), color-stop(33%,#668f24), color-stop(72%,#5b8220), color-stop(100%,#52761c));
+   cursor: pointer;
+ }
 
-#carrousel   img:after {
-	left: 8px;
-	top: 168px;
-	width: 255px;
-	height: 2px;
-	background: #666;
-	
-	border-radius: 125px / 1px;
-	box-shadow: 0 0 5px #444, 0 0 8px #333, 0 0 10px #666;
-}
+ input[type="password"]:focus, input[type="text"]:focus
+ {
+  color: #FFF;
+ }

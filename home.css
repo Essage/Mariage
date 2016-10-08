@@ -22,17 +22,23 @@ html, body
 
 
 
-header, ul
+header
 {
-	margin-top: 0;
+	height: 200px;
+	width: 100%;
+	text-align: center;
+	
 }
 
-/
+header h1
 {
-	width:200px;
-	height: auto;
+	position: absolute;
+    top: 0; left: 0;
+    width: 100%; 
+  	height: 530px;
+    text-align: center;
+	
 }
-
 .block-ligne
 {
 	display: flex;
